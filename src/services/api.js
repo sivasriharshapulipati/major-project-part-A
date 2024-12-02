@@ -43,3 +43,14 @@ export const retrieveData = async (recordId, token) => {
         throw error.response.data;
     }
 };
+
+export const messagesData = async (token) => {
+    try {
+        const response = await axios.get(`${API_URL}/messages`,
+            { headers: { Authorization: `Bearer ${token}` } }
+        );
+        return response.data;
+    } catch (error) {
+        throw error.response.data;
+    }
+};
