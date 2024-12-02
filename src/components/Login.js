@@ -47,8 +47,9 @@ const Login = () => {
                 ? await login(email, password)
                 : await register(email, password);
 
-            // Store token in localStorage
+            // Store token and email in localStorage
             localStorage.setItem('token', response.access_token);
+            localStorage.setItem('userEmail', email);
 
             // Redirect to data encryption page
             navigate('/encrypt');
